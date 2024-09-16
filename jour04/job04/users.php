@@ -1,39 +1,27 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "utilisateurs";
 
 try {
-    // Connexion à la base de données
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Préparer et exécuter la requête SQL
-    $stmt = $conn->prepare("SELECT * FROM utilisateurs");
+    $data = json_decode(file_get_contents("php://input"));
+
+    $stmt = $conn->prepare("UPDATE utilisateurs SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id");
+    $stmt->bindParam(':id', $data->id);
+    $stmt->bindParam(':nom', $data->nom);
+    $stmt->bindParam(':prenom', $data->prenom);
+    $stmt->bindParam(':email', $data->email);
+
     $stmt->execute();
 
-    // Récupérer les résultats sous forme de tableau associatif
-    $data = [];
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $data[] = $row;
-    }
-
-    // Envoyer les en-têtes avant toute autre sortie
-    header("Content-Type: application/json");
-
-    // Envoyer les données JSON au client
-    echo json_encode($data);
-
+    echo json_encode(["message" => "Utilisateur mis à jour avec succès"]);
 } catch (PDOException $e) {
-    // Gérer l'exception et envoyer une réponse JSON avec un message d'erreur
-    header("Content-Type: application/json");
-    echo json_encode([
-        "error" => "Connexion non établie: " . $e->getMessage()
-    ]);
-    exit();
+    echo json_encode(["message" => "Erreur lors de la mise à jour : " . $e->getMessage()]);
 }
 
-// Fermer la connexion
 $conn = null;
+?>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <title>Connexion</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            Jour 05
+        </h1>
+
+        <div>
+            <button>
+                <a href="./inscription.html">Inscription</a>
+            </button>
+            <button>
+                <a href="./connexion.html">Connexion</a>
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+        <h2>Connexion</h2>
+
+        <form id="connexionForm" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="password">Mots de passe:</label>
+            <input type="password" id="email" name="password" required>
+            <span id="passwordError" class="error"></span>
+
+            <button type="submit">Se Connecter</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

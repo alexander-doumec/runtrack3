@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <title>Connexion</title>
+</head>
+
+<body>
+    <header>
+        <h1>Jour05</h1>
+        <div>
+            <button>
+                <a href="./inscription.html">Inscription</a>
+            </button>
+
+            <button>
+                <a href="./connexion.html">Connexion</a>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <h2>Inscription</h2>
+    <form id="inscriptionForm" method="post">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom"  required>
+        <span id="nomError" class="error"></span>
+
+        <label for="prenom">Prenom:</label>
+        <input type="text" id="Prenom" name="prenom" required>
+        <span id="prenomError" class="error"></span>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="nom" required>
+        <span id="emailError" class="error"></span>
+
+        <label for="password">Mots de Passe:</label>
+        <input type="password" id="password" name="password" required>
+        <span id="passwordError" class="error"></span>
+
+        <label for="adresse">Adresse:</label>
+        <input type="text" id="adress" name="adress" required>
+        <span id="adressError" class="error"></span>
+
+        <label for="codePostal">Code Postal</label>
+        <input type="text" id="codePostal" name="codePostal" required>
+        <span id="codePostalError" class="error"></span>
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    </main>
+
+    
+
+</body>
+
+</html>

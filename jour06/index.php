@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    
-<?php include("./navbar.php"); ?>
+
+    <?php include("./navbar.php"); ?>
 
     <div class="container mt-5">
         <div class="row">
@@ -22,7 +22,27 @@
                     <div class="card-body">
                         <h5 class="card-title">Un Papillon</h5>
                         <p class="card-text">Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
-                        <a href="#" class="btn btn-primary">Commander votre propre papillon</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Commander votre propre papillon
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Achat confirmer!!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,6 +124,16 @@
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="inputPassword5" class="form-label">Password</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
         </div>
     </div>
 
